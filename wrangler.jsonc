@@ -1,8 +1,0 @@
-{
-  // Cloudflare Workers – trang tĩnh (static assets), không cần build
-  "name": "minh-travel",
-  "compatibility_date": "2025-06-01",
-  "assets": {
-    "directory": "./"
-  }
-}
