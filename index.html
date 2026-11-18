@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Minh Travel - Travel Blogger &amp; Local Tour Guide</title>
+<meta name="description" content="Minh Travel – Hướng dẫn viên quốc tế & chuyên gia thiết kế tour may đo: tour trong nước, quốc tế, private gia đình và tour đoàn doanh nghiệp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{"surface-container-highest":"#eae1da","surface-container-high":"#f0e6e0","on-tertiary":"#ffffff","on-primary":"#ffffff","surface-bright":"#fff8f5","secondary-fixed":"#a6f4b5","surface-container-lowest":"#ffffff","surface-variant":"#eae1da","on-surface-variant":"#3f493f","on-surface":"#1f1b17","tertiary-container":"#9c6300","primary-fixed":"#95f8a7","secondary":"#1f6c3a","surface-container":"#f6ece6","outline":"#6f7a6e","surface":"#fff8f5","tertiary":"#7b4d00","surface-container-low":"#fcf2eb","outline-variant":"#becabc","on-primary-fixed":"#00210a","on-tertiary-container":"#fff2e7","primary-container":"#15803d","primary-fixed-dim":"#79db8d","error":"#ba1a1a","primary":"#00652c","on-secondary-container":"#24703e","on-secondary":"#ffffff","inverse-surface":"#342f2b","inverse-on-surface":"#f9efe8"},
+fontFamily:{display:["Plus Jakarta Sans","sans-serif"],body:["Be Vietnam Pro","sans-serif"]},
+fontSize:{"headline-sm":["22px",{lineHeight:"30px",fontWeight:"600"}],"label-md":["12px",{lineHeight:"16px",letterSpacing:"0.04em",fontWeight:"600"}],"body-sm":["14px",{lineHeight:"22px",letterSpacing:"0.01em"}],"label-lg":["14px",{lineHeight:"20px",letterSpacing:"0.02em",fontWeight:"600"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.02em",fontWeight:"700"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-lg":["18px",{lineHeight:"30px"}],"title-lg":["18px",{lineHeight:"26px",fontWeight:"600"}],"body-md":["16px",{lineHeight:"26px"}],"label-sm":["11px",{lineHeight:"14px",letterSpacing:"0.05em",fontWeight:"500"}]}}}};
+</script>
+<style>
+  html,body{margin:0;padding:0}
+  body{overscroll-behavior:none;font-family:"Be Vietnam Pro",sans-serif}
+  .material-symbols-outlined{font-variation-settings:'FILL' 0,'wght' 400,'GRAD' 0,'opsz' 24;line-height:1}
+  .fill-1{font-variation-settings:'FILL' 1}
+  section[id]{scroll-margin-top:84px}
+  .hero-select{appearance:none;background:transparent;color:#fff;width:100%;outline:none;cursor:pointer}
+  .hero-select option{color:#1f1b17}
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  .tour-card.is-hidden{display:none}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}*{animation:none!important}}
+</style>
+</head>
+<body class="bg-surface text-on-surface antialiased">
+
+<!-- ============================== HEADER ============================== -->
+<header id="siteHeader" class="fixed top-0 inset-x-0 z-50 transition-all duration-300 bg-white/70 backdrop-blur-md border-b border-surface-container-high/40">
+  <div class="h-[72px] max-w-7xl mx-auto px-4 lg:px-8 flex items-center justify-between gap-3">
+    <a href="#top" class="flex items-center gap-3 shrink-0 group">
+      <img alt="Minh Travel Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5MJw5Go3z6POGM5J0qZjjnsXbYC4oM7JaJDaDqQ0-WlHuE-7oGqnXbndpP-Zr0K5T-aQVddK4FfoW5nRfkr9KzzOMEXSxv6B1LFWKn8pa5Uwp-SDaHYXs9Q4JVF4QvmpFZnX43D_-HN8TMz32eNnI4K8IKIWkfwZWxe1rpb46wcksLDxUwJothb23A3gnRsnnutfassBWXN_rP76IInV6gIJapQhqoKUmpMEeDa-piWW2pCmQrCQ">
+      <span class="flex flex-col justify-center">
+        <span class="text-2xl font-display font-bold tracking-tight leading-tight group-hover:text-primary transition-colors whitespace-nowrap">Minh Travel</span>
+        <span class="flex items-center gap-1.5"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="text-[10px] text-secondary font-medium tracking-wider uppercase whitespace-nowrap">Explorer &amp; Guide</span></span>
+      </span>
+    </a>
+
+    <nav class="hidden xl:flex items-center gap-1" id="desktopNav">
+      <a class="nav-link" href="#top">Trang chủ</a>
+      <a class="nav-link" href="#about">Về Minh Travel</a>
+      <a class="nav-link" href="#featured-tours">Tour Du Lịch</a>
+      <a class="nav-link" href="#gallery">Khoảnh Khắc</a>
+      <a class="nav-link" href="#reviews">Khách Hàng</a>
+      <a class="nav-link" href="#booking">Liên Hệ</a>
+    </nav>
+
+    <div class="flex items-center gap-2.5 shrink-0">
+      <a class="hidden lg:flex items-center gap-1.5 text-on-surface-variant hover:text-primary px-3 py-1.5 rounded-full hover:bg-surface-container transition-colors whitespace-nowrap" href="tel:0847996677">
+        <span class="material-symbols-outlined text-base text-primary">call</span><span class="font-medium text-body-sm">084 799 6677</span>
+      </a>
+      <a class="hidden lg:inline-flex items-center gap-1.5 bg-[#0068FF]/10 hover:bg-[#0068FF] text-[#0068FF] hover:text-white px-3 py-1.5 rounded-full transition-all whitespace-nowrap" href="https://zalo.me/0847996677" target="_blank" rel="noopener noreferrer">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.13 2 11.23c0 3.01 1.58 5.68 4 7.28v3.49l3.52-1.930c.8.23 1.63.36 2.48.36 5.52 0 10-4.13 10-9.2s-4.48-9.23-10-9.23zm-1.8 11.96H7.72c-.32 0-.58-.26-.58-.58 0-.17.07-.32.19-.43l3.22-3.79H8.02c-.32 0-.58-.26-.58-.58s.26-.58.58-.58h2.38c.32 0 .58.26.58.58 0 .16-.07.31-.19.42l-3.12 3.8h2.51c.32 0 .58.26.58.58 0 .32-.26.58-.58.58zm4.72 0h-2.12c-.32 0-.58-.26-.58-.58V7.480c0-.32.26-.58.58-.58s.58.26.58.58v4.32h1.54c.32 0 .58.26.58.58 0 .32-.26.58-.58.58z"/></svg>
+        <span class="font-medium text-body-sm">Chat Zalo</span>
+      </a>
+      <button id="menuBtn" aria-label="Mở menu" aria-expanded="false" aria-controls="mobileMenu" class="xl:hidden p-2 rounded-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors">
+        <span class="material-symbols-outlined text-2xl" id="menuIcon">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="xl:hidden hidden border-t border-surface-container-high bg-white/95 backdrop-blur-md">
+    <nav class="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
+      <a class="m-link" href="#top">Trang chủ</a>
+      <a class="m-link" href="#about">Về Minh Travel</a>
+      <a class="m-link" href="#featured-tours">Tour Du Lịch</a>
+      <a class="m-link" href="#gallery">Khoảnh Khắc</a>
+      <a class="m-link" href="#reviews">Khách Hàng</a>
+      <a class="m-link" href="#booking">Liên Hệ</a>
+      <div class="grid grid-cols-2 gap-2 pt-2">
+        <a href="tel:0847996677" class="flex items-center justify-center gap-1.5 bg-primary text-white rounded-lg py-2.5 text-label-lg"><span class="material-symbols-outlined text-base">call</span>Gọi ngay</a>
+        <a href="https://zalo.me/0847996677" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-1.5 bg-[#0068FF] text-white rounded-lg py-2.5 text-label-lg">Chat Zalo</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="w-full pt-20">
+
+<!-- ============================== 1. HERO ============================== -->
+<section class="relative w-full -mt-20 pt-24 sm:pt-28 pb-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+  <div class="relative w-full min-h-[600px] lg:min-h-[640px] rounded-3xl overflow-hidden shadow-2xl bg-[#0e3b1f] flex flex-col border border-primary-container/40">
+    <div class="absolute inset-0 overflow-hidden">
+      <img src="https://lh3.googleusercontent.com/aida/ALJJyrDTPpKaGgYUs3rZTBgFaYIg5fxCuwPjqRPKIyZYazjlcyirse4wGUKnVMGoGokPyj6Rz5yJMxYz8QINMSAsA1eAqcFbMIiT0kQE6rLiS5ZxX5AoUg2pUMV8CoCJmq_tA-j_URhN0NFO7R99SFTQye9SPENGqz5ZY5a5QK4i-_dcWybrKovNs9DNz_3GLc1gSf2BCeg05-amI0BaAj3LkCTH5MZPos1xlkYaglIUDh8" alt="" class="w-full h-full object-cover brightness-[0.88] contrast-[1.05]" onerror="this.onerror=null;this.src='https://lh3.googleusercontent.com/aida-public/AB6AXuBhRK6CxEwDUhiQmq97yP5aD2A4XuANhTz5afZZ2WkHAyhrHY6eAmgNujDeGqpkZyp0dOsBhtf9vCGq9JcexRQVL-A94ij_-RkPEndcUI-YjQO3Wy8t4HN7bkxIn6fi-4p275O5sqO4yE_iW531sU1RCKR5m48aVNy9Xd5dGnG0pzFjAZ440mppcBq-Ec3BOwJnrMstPa_x2ql9NjEoyW3WDlwgVwBnZZ-e65yikQ'">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-black/25"></div>
+      <div class="absolute -bottom-24 -left-20 w-[600px] h-[400px] rounded-full bg-primary/20 blur-3xl pointer-events-none"></div>
+      <div class="absolute top-1/4 -right-20 w-[500px] h-[500px] rounded-full bg-secondary-fixed/15 blur-3xl pointer-events-none"></div>
+    </div>
+
+    <div aria-hidden="true" class="absolute inset-x-0 top-6 sm:top-8 z-10 flex justify-center pointer-events-none select-none overflow-hidden">
+      <span class="font-display font-extrabold text-[64px] sm:text-[115px] md:text-[145px] lg:text-[185px] tracking-tighter text-primary-fixed/20 leading-none whitespace-nowrap uppercase">MINH TRAVEL</span>
+    </div>
+    <h1 class="sr-only">Minh Travel – Hướng dẫn viên &amp; thiết kế tour du lịch may đo</h1>
+
+    <div class="absolute inset-0 z-20 flex justify-center items-end pointer-events-none">
+      <div class="relative w-full max-w-4xl h-full flex justify-center items-end">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7zfLRNJWPo4uOQnt22uHMlp_UkcMIf9TfVcNFCoXkiUcgsJT68kcXGDsFC3__l8EoGlEZoscttLWoQpk_52WnsiQVPpYa_lxnNSRYqw8qmh6WfzqmRZ4eIdadMybW5NQGbhTRngBCHWgKtS_0HBz_2Gx2gNMNydRTh0eLALL9_jd5BDw632rxhrnU6O_Oh18rxjXIBY64CqS6-J5XfsH7HlDwWVMZgFbalfbGaqZvf3Vih6l__-0" alt="Hoàng Quang Minh - Founder & Tour Guide" class="hidden md:block h-[92%] lg:h-full max-h-[750px] scale-110 lg:scale-[1.15] object-contain object-bottom drop-shadow-2xl translate-x-12 lg:translate-x-16 origin-bottom">
+      </div>
+    </div>
+
+    <div class="relative z-30 w-full p-5 sm:p-8 lg:p-10 flex flex-col justify-between flex-1 pointer-events-none">
+      <div class="flex flex-wrap items-center justify-between gap-4 pointer-events-auto">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-primary-fixed text-[11px] sm:text-xs font-bold tracking-wider">
+          <span class="material-symbols-outlined text-sm animate-pulse">explore</span>
+          <span>LOCAL GUIDE &amp; PRIVATE EXPERIENCES</span>
+        </div>
+        <div class="hidden sm:inline-flex items-center gap-2 text-white/80 text-xs bg-black/25 backdrop-blur-sm px-3.5 py-1.5 rounded-full border border-white/10">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Lịch trình cá nhân hoá &amp; Tour đoàn trọn vẹn</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end pt-28 sm:pt-28 lg:pt-36">
+        <!-- Search widget -->
+        <div class="lg:col-span-5 pointer-events-auto">
+          <div class="space-y-3">
+            <div class="flex items-center gap-2.5">
+              <div class="w-2.5 h-6 bg-primary-fixed rounded-full"></div>
+              <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-wide uppercase drop-shadow-md">Tour &amp; Package</h2>
+            </div>
+            <form id="heroSearch" class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 sm:p-5 shadow-2xl space-y-3.5">
+              <div class="grid grid-cols-2 gap-2.5">
+                <label class="hero-field">
+                  <span class="hero-label">Điểm đến</span>
+                  <span class="flex items-center justify-between mt-1">
+                    <select name="dest" class="hero-select text-xs sm:text-sm font-semibold truncate">
+                      <option>Hà Giang - Cao Bằng</option>
+                      <option>Hạ Long - Lan Hạ</option>
+                      <option>Quy Nhơn - Phú Yên</option>
+                      <option>Nhật Bản</option>
+                      <option>Thái Lan / Đài Loan</option>
+                    </select>
+                    <span class="material-symbols-outlined text-sm text-outline-variant pointer-events-none">expand_more</span>
+                  </span>
+                </label>
+                <label class="hero-field">
+                  <span class="hero-label">Khởi hành</span>
+                  <span class="flex items-center justify-between mt-1">
+                    <select name="month" id="heroMonth" class="hero-select text-xs sm:text-sm font-semibold"></select>
+                    <span class="material-symbols-outlined text-sm text-outline-variant pointer-events-none">calendar_month</span>
+                  </span>
+                </label>
+                <label class="hero-field">
+                  <span class="hero-label">Loại hình</span>
+                  <span class="flex items-center justify-between mt-1">
+                    <select name="type" class="hero-select text-xs sm:text-sm font-semibold truncate">
+                      <option value="private">Private Gia Đình</option>
+                      <option value="domestic">Tour Trong Nước</option>
+                      <option value="international">Tour Quốc Tế</option>
+                      <option value="corporate">Tour Doanh Nghiệp</option>
+                    </select>
+                    <span class="material-symbols-outlined text-sm text-outline-variant pointer-events-none">expand_more</span>
+                  </span>
+                </label>
+                <label class="hero-field">
+                  <span class="hero-label">Số lượng</span>
+                  <span class="flex items-center justify-between mt-1">
+                    <select name="size" class="hero-select text-xs sm:text-sm font-semibold">
+                      <option>02 - 04 khách</option>
+                      <option selected>05 - 12 khách</option>
+                      <option>13 - 30 khách</option>
+                      <option>Trên 30 khách</option>
+                    </select>
+                    <span class="material-symbols-outlined text-sm text-outline-variant pointer-events-none">group</span>
+                  </span>
+                </label>
+              </div>
+              <button type="submit" class="w-full flex items-center justify-between bg-primary-fixed hover:bg-emerald-300 text-on-primary-fixed font-display font-extrabold text-xs sm:text-sm px-5 py-3 rounded-xl shadow-lg transition-all hover:scale-[1.02]">
+                <span class="tracking-wider uppercase">Khám phá ngay</span>
+                <span class="w-6 h-6 rounded-lg bg-black/10 flex items-center justify-center"><span class="material-symbols-outlined text-base">north_east</span></span>
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <div class="hidden lg:block lg:col-span-3"></div>
+
+        <div class="lg:col-span-4 flex flex-col items-start lg:items-end gap-5 pointer-events-auto">
+          <div class="relative w-full max-w-[280px] h-[190px] hidden lg:block">
+            <div class="absolute right-20 -top-2 w-32 h-44 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/40 rotate-[-12deg] hover:rotate-0 hover:scale-105 transition-all duration-300 z-10">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUKcxxb_AD8TfPehfnn4491lUFWlbKJChy88Tz3Ra1v2XNwmjjVGIJy6-TrA7aDZ8xF0CFJ34rqdKdd_YkNkL68nNLcb79XzfIyGUuwR1HXDIh_gTOCwa355pcSEMx63aWAQIQFMGcBJBld9r2i0pYN80Ru3yxESvE_Zn90jV2FmIh685GtLHTaW3YDQgBrDw40MoIBomc2XB1r2_i4Wgd5HQ_VE8qoYAF_tSiFg" alt="Vịnh Lan Hạ" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-2"><span class="text-[10px] text-white font-bold">Vịnh Lan Hạ</span></div>
+            </div>
+            <div class="absolute right-0 top-3 w-36 h-48 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/50 rotate-[8deg] hover:rotate-0 hover:scale-105 transition-all duration-300 z-20">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRK6CxEwDUhiQmq97yP5aD2A4XuANhTz5afZZ2WkHAyhrHY6eAmgNujDeGqpkZyp0dOsBhtf9vCGq9JcexRQVL-A94ij_-RkPEndcUI-YjQO3Wy8t4HN7bkxIn6fi-4p275O5sqO4yE_iW531sU1RCKR5m48aVNy9Xd5dGnG0pzFjAZ440mppcBq-Ec3BOwJnrMstPa_x2ql9NjEoyW3WDlwgVwBnZZ-e65yikQ" alt="Hà Giang mùa hoa" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-2.5"><span class="text-[11px] text-white font-bold">Hà Giang Mùa Hoa</span></div>
+            </div>
+          </div>
+          <div class="bg-black/40 backdrop-blur-md border border-white/20 rounded-2xl px-4 py-3 flex items-center gap-3.5 shadow-xl">
+            <div class="flex -space-x-2.5">
+              <img class="h-8 w-8 rounded-full ring-2 ring-white/50 object-cover" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQ3xq5I5q6mnjmb6TfjpNSez_4y0Py9lqL3BnK2cHhukg7ORVtiturahppkxT6PvOnyxe-sAglzrf8wuiMhsrn2uHegJWOvjIUomcrUt3e9oIfYYSk0CSVFXOxVb0wHLtnmIs9ll10S5jIuV8xX3fZYbv9pclLS0ysbyNWfjrITwaaoADzwCDw4ggq9kTZpoHPXS0vafo6b4MIWQpjfy_n11OQWvVOeE2G31o8g">
+              <img class="h-8 w-8 rounded-full ring-2 ring-white/50 object-cover" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-L5jejDW6FjQALCNG27ubgT1ZtRFxNbOJBZa2I7NUQGU6CAiN-gR08iKzsxxKaKuA_mkWzRTqi87W73Bfp3VhA3KabnNu6D-Fi4UBdsn0b-7Ls2G58fy8oZQ6Rt6fuzqBp5DK2hpHTpY-6j42f6tuFttmVVHE_-CpKRud6-rGdoD_upXSXlyN6u1lDxYgWQ4F28StOgs9rJE-9HhlCzKhKx_LJ3itKJAGllV2TQ">
+              <img class="h-8 w-8 rounded-full ring-2 ring-white/50 object-cover" alt="" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN_ipQaHZTgTaMt_4jEPL0uENP2qon05lgWO4juAHTj-faVH3gnDaz6h-SltICk08Jf1Gbj4fanF_ZSBHADMtdFdqK_OsPya32f7Jjfg6eRArqO2XkahT-b4JfIkGlvMeIP6r8c44mLcwPlZdSd_ev2rtZfzWYWi5eEuy54bGMO6gDeTtgoIfBN0cC485gjgg-hdVkDsOY0_UjvHZAMiA95gG82AlKLnXM3HzmNw">
+            </div>
+            <div class="flex flex-col">
+              <div class="flex items-center gap-1.5">
+                <span class="font-display font-extrabold text-white text-base leading-none"><span class="countup" data-to="3500">3.500</span>+</span>
+                <span class="material-symbols-outlined fill-1 text-[13px] text-amber-400">star</span>
+              </div>
+              <span class="text-[10px] text-white/70 font-semibold uppercase tracking-wider mt-0.5">Bạn đồng hành hài lòng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats strip -->
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 mt-6">
+    <div class="stat-box reveal"><span class="stat-num"><span class="countup" data-to="8">8</span>+</span><span class="stat-label">Năm dẫn tour</span></div>
+    <div class="stat-box reveal"><span class="stat-num"><span class="countup" data-to="450">450</span>+</span><span class="stat-label">Hành trình đã tổ chức</span></div>
+    <div class="stat-box reveal"><span class="stat-num"><span class="countup" data-to="12">12</span></span><span class="stat-label">Quốc gia đã dẫn đoàn</span></div>
+    <div class="stat-box reveal"><span class="stat-num">4.9<span class="text-base text-outline">/5</span></span><span class="stat-label">Điểm đánh giá trung bình</span></div>
+  </div>
+</section>
+
+<!-- ============================== 2. ABOUT ============================== -->
+<section id="about" class="w-full bg-surface-container-low py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-14 lg:gap-16 items-center">
+      <div class="lg:col-span-5 order-2 lg:order-1 reveal">
+        <div class="relative pb-10 lg:pb-0">
+          <div class="w-full aspect-[3/4] rounded-xl overflow-hidden shadow-xl bg-surface-container">
+            <img class="w-full h-full object-cover" alt="Minh ngồi trên tảng đá giữa rừng Tây Bắc, đang chỉnh ống kính máy ảnh" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvoKSL3echiBYCQoZO2Wvbjtoh-FGf_NA82eXR9Np_Bzzwp9b_tFyHWkSeYxRSGhA3YemA-z3y2pgWN8FqkjzSXSNwG4ag9KJtmI7hbbqAa7WO_O9PbzZF2cBncJFydposHJ0GyrntPUfqbYOXp9wOrL00rJXzPYYBGwn8gsMYObXxM0b8xoPy9DIUUSsX5KglheVLIQzAUyY6Mnu61RW9NufSrVN5_DOafor0ww" loading="lazy">
+          </div>
+          <div class="absolute -bottom-4 lg:-bottom-8 lg:-right-8 right-2 left-2 lg:left-auto bg-white p-5 rounded-xl shadow-lg lg:max-w-xs space-y-3">
+            <div class="text-label-md text-primary font-bold uppercase tracking-wider flex items-center gap-1.5"><span class="material-symbols-outlined text-base">verified</span>Chứng nhận chuyên môn</div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-sm">badge</span></div>
+              <div class="text-body-sm">Thẻ Hướng Dẫn Viên Du Lịch Quốc Tế (Bộ VH-TT&amp;DL cấp)</div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-secondary-fixed/50 flex items-center justify-center text-primary shrink-0"><span class="material-symbols-outlined text-sm">medical_services</span></div>
+              <div class="text-body-sm">Chứng chỉ Cứu hộ Dã ngoại Quốc tế (WFA - Wilderness First Aid)</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 order-1 lg:order-2 space-y-6 reveal">
+        <div class="inline-flex items-center gap-2 bg-surface-container-highest px-3 py-1 rounded-full text-secondary text-label-md uppercase tracking-wider"><span class="material-symbols-outlined text-sm">verified</span> HDV Tận Tâm &amp; Chuyên Gia Thiết Kế Tour</div>
+        <h2 class="font-display text-headline-md lg:text-headline-lg">"Chào bạn, mình là Minh — <br class="hidden sm:block"><span class="text-primary">người bạn đồng hành tận tâm trên mọi cung đường trong &amp; ngoài nước."</span></h2>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">Hơn 8 năm hoạt động trong ngành lữ hành, Minh vừa là một Hướng dẫn viên Quốc tế nhiệt huyết, vừa là chuyên gia thiết kế các chuyến đi cá nhân hóa theo yêu cầu. Từ các kỳ nghỉ riêng tư của gia đình, chuyến đi nhiều trải nghiệm cho nhóm bạn, đến các tour đoàn doanh nghiệp kết hợp teambuilding gắn kết chuyên nghiệp.</p>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">Minh tin rằng du lịch đích thực không thể rập khuôn máy móc. Dù là trong nước hay quốc tế, mỗi hành trình cùng Minh đều được chăm chút kỹ càng từ bữa ăn, chỗ ở đến chiều sâu văn hóa bản địa, giúp mỗi thành viên hoàn toàn an tâm và tận hưởng trọn vẹn từng khoảnh khắc.</p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+          <div class="pillar"><div class="pillar-icon"><span class="material-symbols-outlined text-xl">design_services</span></div><h3 class="text-title-lg font-bold">Thiết Kế May Đo</h3><p class="text-body-sm text-on-surface-variant">Linh hoạt lịch trình tour riêng, private tour cao cấp, tour đoàn công ty chuẩn chỉnh từng chi tiết.</p></div>
+          <div class="pillar"><div class="pillar-icon"><span class="material-symbols-outlined text-xl">diversity_1</span></div><h3 class="text-title-lg font-bold">HDV Tận Tâm</h3><p class="text-body-sm text-on-surface-variant">Trực tiếp dẫn tour hoặc chọn lọc đội ngũ HDV am hiểu, chu đáo, chăm lo từng thành viên 24/7.</p></div>
+          <div class="pillar"><div class="pillar-icon"><span class="material-symbols-outlined text-xl">public</span></div><h3 class="text-title-lg font-bold">Trong Nước &amp; Quốc Tế</h3><p class="text-body-sm text-on-surface-variant">Trọn vẹn cảnh sắc Việt Nam cùng các tuyến nước ngoài chọn lọc (Thái Lan, Đài Loan, Nhật Bản...).</p></div>
+        </div>
+        <div class="pt-2 flex flex-wrap items-center gap-x-6 gap-y-1">
+          <div class="text-2xl font-bold text-secondary tracking-widest font-display italic">Hoang Quang Minh</div>
+          <div class="text-outline text-label-sm">Founder &amp; Chief Explorer tại Minh Travel</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 3. TOURS ============================== -->
+<section id="featured-tours" class="w-full bg-surface py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 reveal">
+      <div class="space-y-3 max-w-2xl">
+        <div class="eyebrow"><span class="material-symbols-outlined text-base">explore</span>Hành Trình Giới Hạn Cùng Minh</div>
+        <h2 class="font-display text-headline-md lg:text-headline-lg">Những Chuyến Đi Thiết Kế Độc Bản</h2>
+        <p class="text-body-md text-on-surface-variant">Tour Trong Nước trọn gói, Tuyến Quốc Tế chọn lọc, Private Tour cao cấp cho gia đình và Tour Đoàn Doanh Nghiệp thiết kế chuyên biệt.</p>
+      </div>
+      <div class="flex flex-wrap gap-2" id="tourFilters" role="tablist">
+        <button class="filter-btn is-active" data-filter="all">Tất cả</button>
+        <button class="filter-btn" data-filter="domestic">Trong Nước</button>
+        <button class="filter-btn" data-filter="international">Quốc Tế</button>
+        <button class="filter-btn" data-filter="private">Private / Riêng</button>
+        <button class="filter-btn" data-filter="corporate">Doanh Nghiệp</button>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="tourGrid">
+      <!-- Card 1 -->
+      <article class="tour-card reveal" data-cat="domestic">
+        <div class="relative w-full aspect-[4/3] overflow-hidden">
+          <img class="tour-img" loading="lazy" alt="Đèo Mã Pí Lèng và sông Nho Quế, Hà Giang" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhRK6CxEwDUhiQmq97yP5aD2A4XuANhTz5afZZ2WkHAyhrHY6eAmgNujDeGqpkZyp0dOsBhtf9vCGq9JcexRQVL-A94ij_-RkPEndcUI-YjQO3Wy8t4HN7bkxIn6fi-4p275O5sqO4yE_iW531sU1RCKR5m48aVNy9Xd5dGnG0pzFjAZ440mppcBq-Ec3BOwJnrMstPa_x2ql9NjEoyW3WDlwgVwBnZZ-e65yikQ">
+          <span class="tour-badge bg-primary text-white">Tour Trong Nước</span>
+          <span class="tour-days"><span class="material-symbols-outlined text-xs">schedule</span> 4N3Đ</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2"><span class="tag">Đông Bắc Cao Cấp</span><span class="text-outline text-label-sm">• HDV tận tình</span></div>
+            <h3 class="tour-title">Mùa Hoa &amp; Săn Mây Đông Bắc (Hà Giang - Cao Bằng)</h3>
+            <p class="text-body-sm text-on-surface-variant line-clamp-2">Chinh phục Mã Pí Lèng, thác Bản Giốc hùng vĩ, nghỉ homestay cao cấp và trải nghiệm văn hóa Tày - Nùng sâu sắc.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-body-sm"><span class="text-outline">Còn chỗ:</span><span class="font-bold text-primary">4 / 12 chỗ</span></div>
+            <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width:66%"></div></div>
+            <div class="flex items-baseline justify-between pt-2"><div class="text-headline-sm font-bold">5.890.000 <span class="text-body-sm font-normal text-outline">₫</span></div><span class="text-label-sm text-outline">Trọn gói / khách</span></div>
+            <a class="tour-cta" href="#booking" data-interest="0">Xem Chi Tiết &amp; Giữ Chỗ <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="tour-card reveal" data-cat="international">
+        <div class="relative w-full aspect-[4/3] overflow-hidden">
+          <img class="tour-img" loading="lazy" alt="Núi Phú Sĩ, Nhật Bản" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqDBrd2VXEs5UiuHT7QDHzM3Z-X4v_zekzcIfPcFBkzWViLY-rKKRb8UE94J_xOAzuDKz3xMXMdhty-FNqauMIHx_R8K5laPv5NOh_IuI10Cr2qMzWsHkxdcbKf2Oaudf0xySwN0RkNWWQO8nUEEB-zwRM1UtAXP0NY82tscFWeeyy11skpHpm5R4oW14nkeL18gNid4PY3H0xgnAF2mumbcPryvBwceDLiI_grA">
+          <span class="tour-badge bg-tertiary-container text-on-tertiary-container">Tour Quốc Tế</span>
+          <span class="tour-days"><span class="material-symbols-outlined text-xs">schedule</span> 6N5Đ</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2"><span class="tag">Nhóm Tinh Tế</span><span class="text-outline text-label-sm">• Không ép mua sắm</span></div>
+            <h3 class="tour-title">Khám Phá Xứ Phù Tang (Tokyo - Phú Sĩ - Kyoto)</h3>
+            <p class="text-body-sm text-on-surface-variant line-clamp-2">Trải nghiệm trà đạo, ngắm núi Phú Sĩ, ẩm thực kaiseki truyền thống và dạo bước cố đô Kyoto cổ kính.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-body-sm"><span class="text-outline">Quy mô:</span><span class="font-bold text-primary">Tối đa 15 khách</span></div>
+            <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width:65%"></div></div>
+            <div class="flex items-baseline justify-between pt-2"><div class="text-headline-sm font-bold">32.900.000 <span class="text-body-sm font-normal text-outline">₫</span></div><span class="text-label-sm text-outline">Gồm visa &amp; vé bay</span></div>
+            <a class="tour-cta" href="#booking" data-interest="1">Xem Chi Tiết &amp; Giữ Chỗ <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="tour-card reveal" data-cat="private domestic">
+        <div class="relative w-full aspect-[4/3] overflow-hidden">
+          <img class="tour-img" loading="lazy" alt="Thuyền kayak trên vịnh Lan Hạ" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUKcxxb_AD8TfPehfnn4491lUFWlbKJChy88Tz3Ra1v2XNwmjjVGIJy6-TrA7aDZ8xF0CFJ34rqdKdd_YkNkL68nNLcb79XzfIyGUuwR1HXDIh_gTOCwa355pcSEMx63aWAQIQFMGcBJBld9r2i0pYN80Ru3yxESvE_Zn90jV2FmIh685GtLHTaW3YDQgBrDw40MoIBomc2XB1r2_i4Wgd5HQ_VE8qoYAF_tSiFg">
+          <span class="tour-badge bg-secondary text-white">Private Gia Đình</span>
+          <span class="tour-days"><span class="material-symbols-outlined text-xs">schedule</span> 3N2Đ</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2"><span class="tag">Du Thuyền Riêng</span><span class="text-outline text-label-sm">• Nghỉ dưỡng</span></div>
+            <h3 class="tour-title">Hạ Long - Lan Hạ: Du Thuyền Riêng &amp; Trải Nghiệm</h3>
+            <p class="text-body-sm text-on-surface-variant line-clamp-2">Hành trình riêng tư cho gia đình, chèo kayak vùng vịnh êm, câu mực đêm và tiệc hải sản sang trọng trên boong.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-body-sm"><span class="text-outline">Lịch trình:</span><span class="font-bold text-primary">May đo theo gia đình</span></div>
+            <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width:100%"></div></div>
+            <div class="flex items-baseline justify-between pt-2"><div class="text-headline-sm font-bold">6.450.000 <span class="text-body-sm font-normal text-outline">₫</span></div><span class="text-label-sm text-outline">Trọn gói / khách</span></div>
+            <a class="tour-cta" href="#booking" data-interest="2">Tư Vấn Tour Riêng <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="tour-card reveal" data-cat="corporate domestic">
+        <div class="relative w-full aspect-[4/3] overflow-hidden">
+          <img class="tour-img" loading="lazy" alt="Bờ biển Quy Nhơn nhìn từ trên cao" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAsZ67TeMy938IWR56CemXvVx_fO7BKfbFFlJ2ibYLMInM7wxhYvYLhFsRFOXYqGdLpvaMPTYp2n_SBT-4_b_G8B6ykvJWWukuEnKNN4pvqR2YMHuTXOM-l2CkDoCFDFOQ22usYW5wdQfvorfr3zaEdTP0COvbOIfx6MtIOK0YW7B5LMVT45BdiDm0vCttNPlLtGGegH3JrG_tfGVKNOXCI07dq1GhLzl6dpx68rg">
+          <span class="tour-badge bg-surface-container-highest text-on-surface">Tour Doanh Nghiệp</span>
+          <span class="tour-days"><span class="material-symbols-outlined text-xs">schedule</span> 3N2Đ</span>
+        </div>
+        <div class="p-5 flex-1 flex flex-col justify-between gap-4">
+          <div class="space-y-2">
+            <div class="flex items-center gap-2"><span class="tag">Teambuilding</span><span class="text-outline text-label-sm">• Gala Dinner</span></div>
+            <h3 class="tour-title">Quy Nhơn - Phú Yên: Gắn Kết Đội Ngũ &amp; Trải Nghiệm</h3>
+            <p class="text-body-sm text-on-surface-variant line-clamp-2">Hoạt động bãi biển gắn kết, đêm gala ấm cúng và thưởng thức đặc sản xứ Nẫu tươi ngon.</p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between text-body-sm"><span class="text-outline">Quy mô đoàn:</span><span class="font-bold text-primary">20 - 150 khách</span></div>
+            <div class="w-full h-2 bg-surface-container rounded-full overflow-hidden"><div class="h-full bg-primary rounded-full" style="width:100%"></div></div>
+            <div class="flex items-baseline justify-between pt-2"><div class="text-headline-sm font-bold">4.350.000 <span class="text-body-sm font-normal text-outline">₫</span></div><span class="text-label-sm text-outline">Báo giá linh hoạt</span></div>
+            <a class="tour-cta" href="#booking" data-interest="3">Nhận Báo Giá Tour Đoàn <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="p-6 lg:p-8 bg-surface-container-low rounded-xl flex flex-col md:flex-row items-center justify-between gap-6 shadow-sm mt-10 reveal">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-xl bg-primary text-white flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-2xl">route</span></div>
+        <div>
+          <h3 class="text-title-lg font-bold">Cần thiết kế tour riêng cho gia đình, nhóm bạn hoặc công ty?</h3>
+          <p class="text-body-sm text-on-surface-variant">Minh nhận tư vấn lịch trình may đo, hỗ trợ khảo sát và tối ưu ngân sách tốt nhất cho doanh nghiệp &amp; nhóm riêng.</p>
+        </div>
+      </div>
+      <a class="shrink-0 w-full md:w-auto text-center bg-primary hover:bg-secondary text-white text-label-lg px-6 py-3 rounded-lg shadow-sm transition-all" href="#booking">Nhận Tư Vấn &amp; Báo Giá Ưu Đãi</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 4. PROCESS ============================== -->
+<section class="w-full bg-surface pb-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="text-center max-w-2xl mx-auto space-y-3 mb-10 reveal">
+      <div class="eyebrow justify-center"><span class="material-symbols-outlined text-base">conversion_path</span>Quy Trình Làm Việc</div>
+      <h2 class="font-display text-headline-md lg:text-headline-lg">4 Bước Đến Chuyến Đi Trong Mơ</h2>
+    </div>
+    <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+      <li class="step reveal"><span class="step-num">01</span><span class="material-symbols-outlined step-icon">chat</span><h3 class="text-title-lg font-bold">Trò chuyện 1-1</h3><p class="text-body-sm text-on-surface-variant">Minh lắng nghe mong muốn, ngân sách, thể lực và sở thích của cả đoàn.</p></li>
+      <li class="step reveal"><span class="step-num">02</span><span class="material-symbols-outlined step-icon">edit_note</span><h3 class="text-title-lg font-bold">Thiết kế lịch trình</h3><p class="text-body-sm text-on-surface-variant">Gửi lịch trình chi tiết &amp; báo giá minh bạch trong vòng 24 giờ.</p></li>
+      <li class="step reveal"><span class="step-num">03</span><span class="material-symbols-outlined step-icon">task_alt</span><h3 class="text-title-lg font-bold">Chốt &amp; chuẩn bị</h3><p class="text-body-sm text-on-surface-variant">Đặt cọc, hỗ trợ visa, checklist hành trang và nhóm chat riêng cho đoàn.</p></li>
+      <li class="step reveal"><span class="step-num">04</span><span class="material-symbols-outlined step-icon">hiking</span><h3 class="text-title-lg font-bold">Lên đường</h3><p class="text-body-sm text-on-surface-variant">Minh đồng hành, xử lý mọi phát sinh để bạn chỉ việc tận hưởng.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============================== 5. GALLERY ============================== -->
+<section id="gallery" class="w-full bg-surface-container-low py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="text-center max-w-2xl mx-auto space-y-3 mb-10 reveal">
+      <div class="eyebrow justify-center"><span class="material-symbols-outlined text-base">photo_library</span>Góc Ảnh &amp; Ký Ức Xê Dịch</div>
+      <h2 class="font-display text-headline-md lg:text-headline-lg">Khoảnh Khắc Đẹp Đẽ Trên Đường</h2>
+      <p class="text-body-md text-on-surface-variant">Mỗi bức ảnh là một nhịp đập của tự nhiên, là nụ cười mộc mạc và những giây phút bình yên bên bạn bè bốn phương.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-5">
+      <figure class="g-card lg:col-span-7 md:h-[400px] reveal">
+        <img class="g-img" loading="lazy" alt="Chèo kayak ngắm vịnh Lan Hạ - Cát Bà" src="https://lh3.googleusercontent.com/aida/ALJJyrBWuzFKMr7lIwbOOm9IRSdmZuf3d1Oq7QjQGmUYJBoQEFhUXbKj1VZz7NFnR_8hMB-XLaUiouHOUrsgkAR8atIpAh04qUigmIAWnI5cBQ7jjFOAVOHhP7ln70cB3ajY7-cLIEv1nqc83ZxYOCPjp9NwKzowcxM4KeXlmpBb51vsc5gP-MucUHHiPLj32PUnhOwLT49BIjhQRciWQ7vNozCvsVJrCqIrOb1hxNQOGuM">
+        <figcaption class="g-cap justify-between">
+          <span class="self-start inline-flex items-center gap-1.5 bg-white/20 backdrop-blur-md px-3 py-1 rounded-full text-white text-label-sm font-semibold border border-white/20"><span class="material-symbols-outlined text-sm text-primary-fixed">kayaking</span>Trải Nghiệm Nổi Bật</span>
+          <span class="space-y-1 block"><span class="g-kicker">Vịnh Lan Hạ &amp; Cát Bà</span><span class="block font-display text-xl sm:text-2xl font-bold text-white">Chèo thuyền kayak len lỏi vịnh biển ngọc</span></span>
+        </figcaption>
+      </figure>
+      <figure class="g-card lg:col-span-5 md:h-[400px] reveal">
+        <img class="g-img" loading="lazy" alt="Ruộng bậc thang Mù Cang Chải" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBfYW2U1AoK4s-6YoqnY6cETnCYYehHufEopffs58Um1QO53NoK1Z0lXIpgHHo_6uN2NCPUSMDMJVagU-oCxwLbXoWEoD5lya4dwuby__zs04K25CvZFv7r9ZWUeYD2hf-ay6qkqwWpiKVuQ9dKCTGnJczaiztsB8MDCAWpzNH14C10PkOv9fzY4FQOHANXhPoNTSuYjHPPk1A5uIKMFqCS_Lf7Ow2dmLQOE3ZXSg">
+        <figcaption class="g-cap justify-end"><span class="g-kicker">Hoàng hôn Tây Bắc</span><span class="text-title-lg font-bold text-white">Ruộng bậc thang Mù Cang Chải</span></figcaption>
+      </figure>
+      <figure class="g-card lg:col-span-4 md:h-[300px] reveal">
+        <img class="g-img" loading="lazy" alt="Nụ cười vùng cao Hà Giang" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKdCVkDAwHlRJOTYQrdmkH_tOCZM9WufeGX1qvVkrYF6Ctq4XtGVbMXtP_Cl59a6xF1tsP2KMgmtNrXBJv4kex_PWg_3Sfp521CViLVDguLf30v0klVjeAzALLkdlD1s1OFMvbWId6FtHlu5LeHetrsWSCPnJ0Atv3a7Q3A3y5vK5Nr6e3EzRmt0x9DEZO52yCQcOD4UNPuxd40c2LwLLgC3fDy2tMuLz9OmcUDw">
+        <figcaption class="g-cap justify-end"><span class="g-kicker">Đồng Văn - Mèo Vạc</span><span class="text-title-lg font-bold text-white">Nụ cười trong trẻo vùng cao</span></figcaption>
+      </figure>
+      <figure class="g-card lg:col-span-4 md:h-[300px] reveal">
+        <img class="g-img" loading="lazy" alt="Lửa trại đêm Đà Lạt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDnSwxFazDwvXhJAPntydwTaNVCtWLDppKZHQ7MqXeh9RsRFXzVlDFNuk6DkVV6Nc8B3GXEt2cF4uXeLIT7KH2aPKwt7q8E2oiji85SrTHhz-HGmAoAbxC3jomQF9-vIJCPLcacTced2IgUN2EHWHgb5Gz7OKSe22k9NDMjYAG_g0784dwe3bbHjCU0BJ7qe7iPF5kuyjKjTMsxWgxuj8iLiPYQ77OwDZ6EJKXLA">
+        <figcaption class="g-cap justify-end"><span class="g-kicker">Rừng thông sương mù</span><span class="text-title-lg font-bold text-white">Lửa trại ấm cúng đêm Đà Lạt</span></figcaption>
+      </figure>
+      <figure class="g-card lg:col-span-4 md:h-[300px] reveal">
+        <img class="g-img" loading="lazy" alt="Trekking Tà Xùa săn mây" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEtaZNO2NVbpsj7QaxLGMDMEgBhMVWBFkBTUhVZEFKqOZ2UP2yB9jhHhGvdYzMSDXvzUGBJ6_ka5E11TY-bzKXY7zCg3V9e1MMmXORQaX5ZEh34kKM0D4-EqsJarBWznDZqqeFE-We-kNCEzthO6OC5enqz6LbjAupVeTcaZloORRmOtYS9slOqmtdU0P8Dgtg8V1Y_u3b_a1a7snm_R8rRv4FTptLtOg-ft4uNA">
+        <figcaption class="g-cap justify-end"><span class="g-kicker">Chinh phục đại ngàn</span><span class="text-title-lg font-bold text-white">Trekking đỉnh Tà Xùa &amp; săn mây</span></figcaption>
+      </figure>
+    </div>
+    <div class="mt-10 flex justify-center">
+      <a class="inline-flex items-center gap-2 bg-white hover:text-primary px-5 py-3 rounded-lg shadow-sm transition-all text-label-lg" href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+        <span class="material-symbols-outlined text-lg">photo_camera</span><span>Xem thêm nhật ký ảnh tại <strong>@minhtravel_stories</strong></span><span class="material-symbols-outlined text-sm">open_in_new</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 6. REVIEWS ============================== -->
+<section id="reviews" class="w-full bg-surface py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="text-center max-w-2xl mx-auto space-y-3 mb-10 reveal">
+      <div class="eyebrow justify-center"><span class="material-symbols-outlined text-base">forum</span>Chia Sẻ Từ Bạn Đồng Hành</div>
+      <h2 class="font-display text-headline-md lg:text-headline-lg">Những Cảm Xúc Còn Ở Lại</h2>
+      <p class="text-body-md text-on-surface-variant">Hơn cả một chuyến tham quan, đó là nơi những người xa lạ trở thành tri kỷ sau những chặng đèo và đêm dài dưới trời sao.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <figure class="review reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote class="text-body-md leading-relaxed">"Gia đình mình có cả người lớn tuổi lẫn trẻ nhỏ nên rất ngại đi tour ghép đông đúc. May mắn được Minh thiết kế riêng tour du thuyền Lan Hạ - Cát Bà. Lịch trình thong thả, bữa ăn hợp khẩu vị mẹ mình, các con thì thích mê vì chú Minh tận tình hướng dẫn chèo thuyền. Năm sau chắc chắn sẽ tiếp tục nhờ Minh!"</blockquote>
+        <figcaption class="flex items-center gap-3 pt-3">
+          <img class="w-11 h-11 rounded-full object-cover" alt="" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNQ3xq5I5q6mnjmb6TfjpNSez_4y0Py9lqL3BnK2cHhukg7ORVtiturahppkxT6PvOnyxe-sAglzrf8wuiMhsrn2uHegJWOvjIUomcrUt3e9oIfYYSk0CSVFXOxVb0wHLtnmIs9ll10S5jIuV8xX3fZYbv9pclLS0ysbyNWfjrITwaaoADzwCDw4ggq9kTZpoHPXS0vafo6b4MIWQpjfy_n11OQWvVOeE2G31o8g">
+          <div><div class="text-title-lg font-bold leading-tight">Chị Thanh Hương &amp; Gia đình</div><div class="text-label-sm text-outline">Hà Nội • Tour Private Gia Đình Lan Hạ</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote class="text-body-md leading-relaxed">"Công ty tôi vừa kết thúc chuyến Company Trip 60 người tại Quy Nhơn do Minh Travel tổ chức. Khâu điều phối xe cộ, phòng ốc đến teambuilding bãi biển và Gala Dinner đều vô cùng chỉn chu. Minh và ê-kíp hỗ trợ cực kỳ nhiệt tình, linh hoạt xử lý mọi tình huống phát sinh."</blockquote>
+        <figcaption class="flex items-center gap-3 pt-3">
+          <img class="w-11 h-11 rounded-full object-cover" alt="" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-L5jejDW6FjQALCNG27ubgT1ZtRFxNbOJBZa2I7NUQGU6CAiN-gR08iKzsxxKaKuA_mkWzRTqi87W73Bfp3VhA3KabnNu6D-Fi4UBdsn0b-7Ls2G58fy8oZQ6Rt6fuzqBp5DK2hpHTpY-6j42f6tuFttmVVHE_-CpKRud6-rGdoD_upXSXlyN6u1lDxYgWQ4F28StOgs9rJE-9HhlCzKhKx_LJ3itKJAGllV2TQ">
+          <div><div class="text-title-lg font-bold leading-tight">Anh Nguyễn Quốc Tuấn</div><div class="text-label-sm text-outline">Giám đốc Nhân sự TechCorp • Tour Đoàn 60 khách</div></div>
+        </figcaption>
+      </figure>
+      <figure class="review reveal">
+        <div class="stars">★★★★★</div>
+        <blockquote class="text-body-md leading-relaxed">"Lần đầu đi Nhật, nhóm mình lo nhất là rào cản ngôn ngữ và thủ tục visa. Minh hỗ trợ từ A-Z rất rõ ràng, hồ sơ duyệt nhanh. Suốt chuyến Tokyo - Kyoto, Minh không chỉ là HDV am hiểu mà còn như thổ địa dẫn tụi mình ăn những quán izakaya chuẩn vị. Cực kỳ đáng tiền!"</blockquote>
+        <figcaption class="flex items-center gap-3 pt-3">
+          <img class="w-11 h-11 rounded-full object-cover" alt="" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAN_ipQaHZTgTaMt_4jEPL0uENP2qon05lgWO4juAHTj-faVH3gnDaz6h-SltICk08Jf1Gbj4fanF_ZSBHADMtdFdqK_OsPya32f7Jjfg6eRArqO2XkahT-b4JfIkGlvMeIP6r8c44mLcwPlZdSd_ev2rtZfzWYWi5eEuy54bGMO6gDeTtgoIfBN0cC485gjgg-hdVkDsOY0_UjvHZAMiA95gG82AlKLnXM3HzmNw">
+          <div><div class="text-title-lg font-bold leading-tight">Chị Hải Yến &amp; Nhóm bạn</div><div class="text-label-sm text-outline">TP. Hồ Chí Minh • Tour Nhật Bản Mùa Thu</div></div>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 7. FAQ ============================== -->
+<section class="w-full bg-surface-container-low py-16">
+  <div class="max-w-3xl mx-auto px-5 sm:px-6">
+    <div class="text-center space-y-3 mb-8 reveal">
+      <div class="eyebrow justify-center"><span class="material-symbols-outlined text-base">help</span>Câu Hỏi Thường Gặp</div>
+      <h2 class="font-display text-headline-md lg:text-headline-lg">Bạn Còn Băn Khoăn?</h2>
+    </div>
+    <div class="space-y-3">
+      <details class="faq reveal" open><summary>Tour riêng tối thiểu bao nhiêu người?<span class="material-symbols-outlined faq-icon">expand_more</span></summary><p>Từ 2 khách là Minh đã thiết kế được tour private. Với nhóm càng đông, chi phí trên đầu người càng tối ưu.</p></details>
+      <details class="faq reveal"><summary>Giá tour đã bao gồm những gì?<span class="material-symbols-outlined faq-icon">expand_more</span></summary><p>Xe đưa đón, lưu trú, các bữa ăn theo chương trình, vé tham quan, HDV và bảo hiểm du lịch. Minh gửi bảng chi tiết trước khi bạn đặt cọc — không phụ phí ẩn.</p></details>
+      <details class="faq reveal"><summary>Chính sách đặt cọc và hoàn hủy thế nào?<span class="material-symbols-outlined faq-icon">expand_more</span></summary><p>Đặt cọc 30% để giữ chỗ. Hoàn 100% tiền cọc nếu chuyến đi bị hủy do thời tiết nguy hiểm; các trường hợp khác áp dụng theo mốc thời gian ghi trong hợp đồng.</p></details>
+      <details class="faq reveal"><summary>Minh có hỗ trợ làm visa cho tour quốc tế không?<span class="material-symbols-outlined faq-icon">expand_more</span></summary><p>Có. Minh hướng dẫn chuẩn bị hồ sơ, kiểm tra giấy tờ và nộp hồ sơ cùng bạn cho các tuyến Nhật Bản, Đài Loan, Hàn Quốc...</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============================== 8. BOOKING ============================== -->
+<section id="booking" class="w-full bg-surface py-16">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="rounded-2xl overflow-hidden shadow-2xl reveal">
+      <div class="grid grid-cols-1 lg:grid-cols-12">
+        <div class="lg:col-span-5 p-8 lg:p-12 flex flex-col justify-between gap-8 bg-secondary text-white">
+          <div class="space-y-4">
+            <span class="inline-flex items-center gap-2 bg-secondary-fixed text-on-secondary-container px-3 py-1 rounded-full text-label-sm font-bold uppercase tracking-wider"><span class="material-symbols-outlined text-sm">mark_chat_unread</span>Tư Vấn 1-1 Miễn Phí</span>
+            <h2 class="font-display text-headline-md lg:text-headline-lg font-bold leading-tight">Bạn Đang Lên Kế Hoạch Cho Chuyến Đi Sắp Tới?</h2>
+            <p class="text-body-md text-primary-fixed-dim leading-relaxed">Để lại thông tin chuyến đi mơ ước của bạn. Minh sẽ trực tiếp liên hệ, gửi lịch trình chi tiết và tư vấn hành trang phù hợp nhất trong vòng 24 giờ.</p>
+          </div>
+          <div class="space-y-4">
+            <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-fixed text-xl shrink-0 mt-0.5">verified_user</span><div><h3 class="text-label-lg font-bold">Không Phụ Phí Ẩn</h3><p class="text-body-sm text-primary-fixed-dim">Chi phí minh bạch 100%, đã gồm bảo hiểm, xe đưa đón và bữa ăn bản địa.</p></div></div>
+            <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-fixed text-xl shrink-0 mt-0.5">group</span><div><h3 class="text-label-lg font-bold">Số Lượng Giới Hạn</h3><p class="text-body-sm text-primary-fixed-dim">Tour ghép chỉ 8 - 12 bạn để Minh đồng hành trực tiếp cùng từng người.</p></div></div>
+            <div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary-fixed text-xl shrink-0 mt-0.5">support_agent</span><div><h3 class="text-label-lg font-bold">Hỗ Trợ 24/7</h3><p class="text-body-sm text-primary-fixed-dim">Hotline &amp; Zalo cá nhân của Minh: <a href="tel:0847996677" class="font-bold text-white underline-offset-2 hover:underline">+84 (0) 84 799 6677</a></p></div></div>
+          </div>
+          <div class="pt-4 border-t border-white/20 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center font-bold text-sm shrink-0">MT</div>
+            <p class="text-label-sm text-primary-fixed-dim">"Cam kết hoàn 100% tiền đặt cọc nếu chuyến đi bị hủy do điều kiện thời tiết nguy hiểm."</p>
+          </div>
+        </div>
+
+        <div class="lg:col-span-7 p-6 sm:p-8 lg:p-12 bg-white">
+          <form class="space-y-5" id="tourConsultForm" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label for="f-name" class="f-label">Họ và tên bạn *</label>
+                <input id="f-name" name="name" class="f-input" placeholder="Nguyễn Văn A" required type="text" autocomplete="name">
+                <p class="f-error hidden">Vui lòng nhập họ tên.</p>
+              </div>
+              <div class="space-y-1.5">
+                <label for="f-phone" class="f-label">Số điện thoại / Zalo *</label>
+                <input id="f-phone" name="phone" class="f-input" placeholder="0912 xxx xxx" required type="tel" autocomplete="tel" pattern="^(\+84|0)[0-9 .]{8,12}$">
+                <p class="f-error hidden">Số điện thoại chưa hợp lệ.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label for="f-email" class="f-label">Địa chỉ Email</label>
+                <input id="f-email" name="email" class="f-input" placeholder="example@email.com" type="email" autocomplete="email">
+                <p class="f-error hidden">Email chưa hợp lệ.</p>
+              </div>
+              <div class="space-y-1.5">
+                <label for="f-interest" class="f-label">Hành trình bạn quan tâm</label>
+                <div class="relative">
+                  <select id="f-interest" name="interest" class="f-input appearance-none cursor-pointer pr-10">
+                    <option value="domestic">Tour Trong Nước (Đông Bắc, Tây Bắc, Miền Trung...)</option>
+                    <option value="international">Tour Quốc Tế (Nhật Bản, Đài Loan, Thái Lan...)</option>
+                    <option value="private">Tour Private Gia Đình / Nhóm Bạn Thân</option>
+                    <option value="corporate">Tour Đoàn Doanh Nghiệp &amp; Teambuilding</option>
+                    <option value="trekking">Trekking &amp; Văn Hóa Bản Địa Chuyên Sâu</option>
+                  </select>
+                  <span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none text-lg">expand_more</span>
+                </div>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div class="space-y-1.5">
+                <label for="f-date" class="f-label">Thời gian dự kiến</label>
+                <input id="f-date" name="date" class="f-input" placeholder="Ví dụ: Cuối tháng 12, Tết 2027..." type="text">
+              </div>
+              <div class="space-y-1.5">
+                <label for="f-size" class="f-label">Số lượng người tham gia</label>
+                <div class="relative">
+                  <select id="f-size" name="size" class="f-input appearance-none cursor-pointer pr-10">
+                    <option>02 - 04 khách</option>
+                    <option>05 - 12 khách</option>
+                    <option>13 - 30 khách</option>
+                    <option>Trên 30 khách (tour đoàn)</option>
+                  </select>
+                  <span class="material-symbols-outlined absolute right-3 top-3 text-outline pointer-events-none text-lg">expand_more</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-1.5">
+              <label for="f-msg" class="f-label">Lời nhắn gửi Minh (thể lực, mong muốn đặc biệt hoặc ăn kiêng)</label>
+              <textarea id="f-msg" name="message" class="f-input" rows="3" placeholder="Chia sẻ với Minh về thói quen vận động hoặc những điều bạn muốn trải nghiệm nhất..."></textarea>
+            </div>
+            <!-- Ô ẩn chống spam: người thật không thấy, bot sẽ điền -->
+            <div class="hidden" aria-hidden="true"><label>Website <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+            <div id="formError" class="hidden rounded-lg bg-red-50 border border-error/30 text-error text-body-sm px-4 py-3" role="alert">
+              Chưa gửi được thông tin, có thể do mạng chập chờn. Bạn thử lại, hoặc nhắn trực tiếp cho Minh qua <a href="https://zalo.me/0847996677" target="_blank" rel="noopener noreferrer" class="font-bold underline">Zalo 084 799 6677</a>.
+            </div>
+            <button id="submitBtn" class="w-full bg-primary hover:bg-secondary disabled:opacity-70 disabled:cursor-wait text-white text-label-lg py-4 px-8 rounded-lg shadow-md transition-all flex items-center justify-center gap-2" type="submit">
+              <span class="material-symbols-outlined text-lg" id="submitIcon">send</span><span id="submitText">Gửi Thông Tin Cho Minh</span>
+            </button>
+            <p class="text-label-sm text-outline text-center">Minh tôn trọng sự riêng tư của bạn và không bao giờ gửi thư rác hay chia sẻ số điện thoại cho bên thứ ba.</p>
+          </form>
+          <div class="hidden text-center py-12 space-y-4" id="formSuccess" role="status">
+            <div class="w-16 h-16 rounded-full bg-secondary-fixed text-primary flex items-center justify-center mx-auto shadow-md"><span class="material-symbols-outlined text-3xl">check_circle</span></div>
+            <h3 class="text-headline-sm font-bold">Minh Đã Nhận Được Lời Nhắn Của Bạn!</h3>
+            <p class="text-body-md text-on-surface-variant max-w-md mx-auto">Cảm ơn <span id="successName">bạn</span> đã tin tưởng. Minh sẽ liên hệ qua Số điện thoại/Zalo trong vòng 24 giờ tới để gửi hành trình chi tiết nhất nhé!</p>
+            <button id="resetForm" class="inline-flex items-center gap-1 text-primary text-label-lg hover:underline pt-2"><span class="material-symbols-outlined text-sm">refresh</span>Gửi thêm yêu cầu khác</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============================== FOOTER ============================== -->
+<footer class="w-full bg-surface-container-low text-on-surface-variant pt-12 pb-24 md:pb-8">
+  <div class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 mb-10">
+      <div class="space-y-4 lg:col-span-4">
+        <div class="flex items-center gap-3">
+          <img alt="Minh Travel Logo" class="h-11 w-auto object-contain" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC5MJw5Go3z6POGM5J0qZjjnsXbYC4oM7JaJDaDqQ0-WlHuE-7oGqnXbndpP-Zr0K5T-aQVddK4FfoW5nRfkr9KzzOMEXSxv6B1LFWKn8pa5Uwp-SDaHYXs9Q4JVF4QvmpFZnX43D_-HN8TMz32eNnI4K8IKIWkfwZWxe1rpb46wcksLDxUwJothb23A3gnRsnnutfassBWXN_rP76IInV6gIJapQhqoKUmpMEeDa-piWW2pCmQrCQ">
+          <div><div class="text-xl text-on-surface font-display font-bold leading-tight">Minh Travel</div><div class="text-[10px] text-secondary font-medium tracking-wider uppercase">Explorer &amp; Guide</div></div>
+        </div>
+        <p class="text-body-sm leading-relaxed pr-4">Hành trình du lịch bản địa sâu sắc, chân thực và tôn trọng tự nhiên. Cùng Minh khám phá những góc khuất kỳ vĩ trên dải đất hình chữ S và thế giới qua lăng kính người dẫn đường tận tâm.</p>
+        <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container text-secondary text-label-sm font-medium"><span class="material-symbols-outlined text-base text-primary">verified</span>HDV Quốc Tế • WFA Certified</div>
+      </div>
+      <div class="lg:col-span-2 space-y-3">
+        <h3 class="text-label-lg text-on-surface font-bold uppercase tracking-wider">Khám phá</h3>
+        <ul class="space-y-2 text-body-sm">
+          <li><a class="hover:text-primary transition-colors" href="#about">Giới thiệu</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#featured-tours">Tours nổi bật</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#gallery">Khoảnh khắc ảnh</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#reviews">Khách hàng chia sẻ</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-2 space-y-3">
+        <h3 class="text-label-lg text-on-surface font-bold uppercase tracking-wider">Dịch vụ tour</h3>
+        <ul class="space-y-2 text-body-sm">
+          <li><a class="hover:text-primary transition-colors" href="#featured-tours" data-goto-filter="domestic">Tour trong nước</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#featured-tours" data-goto-filter="international">Tour quốc tế</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#featured-tours" data-goto-filter="private">Private tour gia đình</a></li>
+          <li><a class="hover:text-primary transition-colors" href="#featured-tours" data-goto-filter="corporate">Tour đoàn doanh nghiệp</a></li>
+        </ul>
+      </div>
+      <div class="lg:col-span-4 space-y-4">
+        <h3 class="text-label-lg text-on-surface font-bold uppercase tracking-wider">Liên hệ</h3>
+        <ul class="space-y-2 text-body-sm">
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-primary">mail</span><a href="mailto:hello@minhtravel.vn" class="hover:text-primary">hello@minhtravel.vn</a></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-primary">call</span><a href="tel:0847996677" class="font-semibold text-on-surface hover:text-primary">+84 (0) 84 799 6677</a></li>
+          <li class="flex items-start gap-2"><span class="material-symbols-outlined text-base text-primary">location_on</span><span>Hà Nội &amp; TP. Hồ Chí Minh</span></li>
+        </ul>
+        <div class="flex items-center gap-2 flex-wrap pt-2">
+          <a aria-label="Facebook" class="social" href="https://facebook.com" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+          <a aria-label="Instagram" class="social" href="https://instagram.com" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined text-lg">photo_camera</span></a>
+          <a aria-label="TikTok" class="social" href="https://tiktok.com" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.030c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.150-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+          <a aria-label="YouTube" class="social" href="https://youtube.com" target="_blank" rel="noopener noreferrer"><svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="pt-6 border-t border-surface-container-high flex flex-col sm:flex-row items-center justify-between gap-4 text-body-sm text-outline">
+      <p>© <span id="year">2026</span> Minh Travel. Bản quyền nội dung &amp; hình ảnh thuộc về Minh Travel.</p>
+      <div class="flex items-center gap-6 text-label-sm"><a class="hover:text-primary" href="#">Điều khoản &amp; Dịch vụ</a><a class="hover:text-primary" href="#">Chính sách bảo mật</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating contact (desktop) -->
+<div class="hidden md:flex fixed right-5 bottom-5 z-40 flex-col gap-3">
+  <a href="https://zalo.me/0847996677" target="_blank" rel="noopener noreferrer" aria-label="Chat Zalo" class="w-12 h-12 rounded-full bg-[#0068FF] text-white font-bold text-xs flex items-center justify-center shadow-lg hover:scale-110 transition-transform">Zalo</a>
+  <a href="tel:0847996677" aria-label="Gọi điện" class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center shadow-lg hover:scale-110 transition-transform relative"><span class="absolute inset-0 rounded-full bg-primary animate-ping opacity-30"></span><span class="material-symbols-outlined relative">call</span></a>
+  <button id="toTop" aria-label="Lên đầu trang" class="w-12 h-12 rounded-full bg-white text-on-surface flex items-center justify-center shadow-lg opacity-0 pointer-events-none transition-opacity"><span class="material-symbols-outlined">arrow_upward</span></button>
+</div>
+<!-- Sticky bottom bar (mobile) -->
+<div class="md:hidden fixed inset-x-0 bottom-0 z-40 bg-white/95 backdrop-blur border-t border-surface-container-high grid grid-cols-3 text-label-md">
+  <a href="tel:0847996677" class="flex flex-col items-center gap-0.5 py-2.5 text-primary"><span class="material-symbols-outlined text-xl">call</span>Gọi</a>
+  <a href="https://zalo.me/0847996677" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center gap-0.5 py-2.5 text-[#0068FF]"><span class="material-symbols-outlined text-xl">chat</span>Zalo</a>
+  <a href="#booking" class="flex flex-col items-center gap-0.5 py-2.5 bg-primary text-white"><span class="material-symbols-outlined text-xl">event_available</span>Đặt tour</a>
+</div>
+
+<style type="text/tailwindcss">
+  .nav-link{@apply inline-flex items-center px-3.5 py-1.5 rounded-full text-label-md font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container transition-all whitespace-nowrap}
+  .nav-link.is-active{@apply bg-secondary-fixed/50 text-secondary font-semibold}
+  .m-link{@apply px-3 py-3 rounded-lg text-body-md font-medium text-on-surface hover:bg-surface-container hover:text-primary}
+  .m-link.is-active{@apply bg-secondary-fixed/50 text-secondary}
+  .hero-field{@apply bg-black/30 border border-white/15 rounded-xl p-2.5 flex flex-col justify-between hover:border-primary-fixed/60 focus-within:border-primary-fixed transition-colors cursor-pointer}
+  .hero-label{@apply text-[10px] text-primary-fixed font-bold uppercase tracking-wider}
+  .stat-box{@apply bg-white rounded-2xl p-4 sm:p-5 shadow-sm flex flex-col gap-1 border border-surface-container-high}
+  .stat-num{@apply font-display font-extrabold text-2xl sm:text-3xl text-primary}
+  .stat-label{@apply text-body-sm text-on-surface-variant}
+  .eyebrow{@apply flex items-center gap-2 text-primary text-label-md uppercase tracking-wider font-bold}
+  .pillar{@apply bg-surface-container p-4 rounded-xl shadow-sm space-y-2}
+  .pillar-icon{@apply w-9 h-9 rounded-lg bg-primary text-white flex items-center justify-center}
+  .filter-btn{@apply bg-surface-container text-on-surface-variant hover:text-on-surface text-label-sm px-4 py-2 rounded-full transition-colors}
+  .filter-btn.is-active{@apply bg-primary text-white shadow-sm}
+  .tour-card{@apply flex flex-col bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300}
+  .tour-img{@apply w-full h-full object-cover transition-transform duration-500}
+  .tour-card:hover .tour-img{@apply scale-105}
+  .tour-badge{@apply absolute top-3 left-3 text-label-sm px-2.5 py-1 rounded-full font-bold}
+  .tour-days{@apply absolute top-3 right-3 bg-white/90 backdrop-blur-md text-primary text-label-sm px-2 py-1 rounded-md font-bold flex items-center gap-1}
+  .tag{@apply bg-secondary-fixed text-on-secondary-container text-label-sm px-2 py-0.5 rounded}
+  .tour-title{@apply text-title-lg font-bold transition-colors}
+  .tour-card:hover .tour-title{@apply text-primary}
+  .tour-cta{@apply w-full inline-flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white text-label-md py-2.5 rounded-lg transition-colors shadow-sm}
+  .step{@apply relative bg-white rounded-2xl p-6 shadow-sm border border-surface-container-high space-y-2 overflow-hidden}
+  .step-num{@apply absolute -right-1 -top-3 font-display font-extrabold text-7xl text-surface-container-high select-none}
+  .step-icon{@apply relative w-11 h-11 rounded-xl bg-secondary-fixed text-primary flex items-center justify-center text-2xl}
+  .g-card{@apply relative aspect-[4/3] md:aspect-auto rounded-3xl overflow-hidden shadow-md bg-surface-container m-0}
+  .g-img{@apply w-full h-full object-cover transition-transform duration-700}
+  .g-card:hover .g-img{@apply scale-105}
+  .g-cap{@apply absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent p-6 flex flex-col}
+  .g-kicker{@apply block text-label-sm text-primary-fixed uppercase tracking-wider font-bold}
+  .review{@apply bg-white p-7 rounded-xl shadow-sm flex flex-col justify-between gap-5 m-0}
+  .stars{@apply text-tertiary-container tracking-widest text-lg}
+  .faq{@apply bg-white rounded-xl shadow-sm px-5 open:pb-4}
+  .faq summary{@apply flex items-center justify-between gap-4 py-4 cursor-pointer list-none font-semibold text-on-surface}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq p{@apply text-body-sm text-on-surface-variant}
+  .faq[open] .faq-icon{@apply rotate-180}
+  .faq-icon{@apply transition-transform text-outline}
+  .f-label{@apply block text-label-sm text-on-surface font-semibold}
+  .f-input{@apply w-full bg-surface-container-low px-4 py-3 rounded-lg text-on-surface text-body-sm placeholder:text-outline focus:outline-none focus:ring-2 focus:ring-primary/60 shadow-sm border border-transparent}
+  .f-input.invalid{@apply border-error ring-1 ring-error/40}
+  .f-error{@apply text-label-sm text-error}
+  .social{@apply w-9 h-9 rounded-full bg-white text-on-surface-variant hover:text-primary hover:bg-secondary-fixed/50 hover:scale-105 flex items-center justify-center shadow-sm transition-all}
+</style>
+
+<script>
+// ===== CẤU HÌNH: dán link Web App của Google Apps Script vào đây (dạng https://script.google.com/macros/s/.../exec) =====
+let FORM_ENDPOINT = 'https://script.google.com/macros/s/AKfycbzZUpa0o03VGQjn4FtRRsZ96azZKb8nFkLf-MbR-TigT6p2Zl6rE80Hfkb4G_PzCgwR/exec';
+
+(function(){
+  const $ = (s, r=document) => r.querySelector(s);
+  const $$ = (s, r=document) => [...r.querySelectorAll(s)];
+
+  // Year
+  $('#year').textContent = new Date().getFullYear();
+
+  // Header shadow on scroll + back to top
+  const header = $('#siteHeader'), toTop = $('#toTop');
+  const onScroll = () => {
+    const y = window.scrollY;
+    header.classList.toggle('shadow-lg', y > 10);
+    header.classList.toggle('bg-white/90', y > 10);
+    toTop.classList.toggle('opacity-0', y < 600);
+    toTop.classList.toggle('pointer-events-none', y < 600);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+  toTop.addEventListener('click', () => window.scrollTo({top:0, behavior:'smooth'}));
+
+  // Mobile menu
+  const menuBtn = $('#menuBtn'), menu = $('#mobileMenu'), menuIcon = $('#menuIcon');
+  const setMenu = open => {
+    menu.classList.toggle('hidden', !open);
+    menuBtn.setAttribute('aria-expanded', open);
+    menuIcon.textContent = open ? 'close' : 'menu';
+  };
+  menuBtn.addEventListener('click', () => setMenu(menu.classList.contains('hidden')));
+  $$('a', menu).forEach(a => a.addEventListener('click', () => setMenu(false)));
+
+  // Active nav on scroll
+  const sections = ['about','featured-tours','gallery','reviews','booking'].map(id => document.getElementById(id));
+  const links = $$('.nav-link, .m-link');
+  const setActive = id => links.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#' + id));
+  const spy = () => {
+    let current = 'top';
+    sections.forEach(s => { if (s.getBoundingClientRect().top < 140) current = s.id; });
+    setActive(current);
+  };
+  window.addEventListener('scroll', spy, {passive:true}); spy();
+
+  // Hero month options (next 6 months)
+  const monthSel = $('#heroMonth'), now = new Date();
+  for (let i = 0; i < 6; i++) {
+    const d = new Date(now.getFullYear(), now.getMonth() + i, 1);
+    const o = document.createElement('option');
+    o.textContent = 'T' + (d.getMonth()+1) + ', ' + d.getFullYear();
+    monthSel.appendChild(o);
+  }
+
+  // Tour filter
+  const filterBtns = $$('.filter-btn'), cards = $$('.tour-card');
+  const applyFilter = f => {
+    filterBtns.forEach(b => b.classList.toggle('is-active', b.dataset.filter === f));
+    cards.forEach(c => c.classList.toggle('is-hidden', f !== 'all' && !c.dataset.cat.split(' ').includes(f)));
+  };
+  filterBtns.forEach(b => b.addEventListener('click', () => applyFilter(b.dataset.filter)));
+  $$('[data-goto-filter]').forEach(a => a.addEventListener('click', () => applyFilter(a.dataset.gotoFilter)));
+
+  // Prefill booking form from tour CTAs and hero search
+  const form = $('#tourConsultForm');
+  const interestMap = ['domestic','international','private','corporate'];
+  $$('.tour-cta').forEach(a => a.addEventListener('click', () => {
+    form.interest.value = interestMap[a.dataset.interest];
+    const title = a.closest('.tour-card').querySelector('.tour-title').textContent.trim();
+    if (!form.message.value) form.message.value = 'Mình quan tâm tour: ' + title;
+  }));
+  $('#heroSearch').addEventListener('submit', e => {
+    e.preventDefault();
+    const hs = e.target;
+    form.interest.value = hs.type.value;
+    form.date.value = hs.month.value;
+    const sizeIdx = hs.size.selectedIndex;
+    form.size.selectedIndex = sizeIdx;
+    if (!form.message.value) form.message.value = 'Điểm đến mong muốn: ' + hs.dest.value;
+    applyFilter(hs.type.value);
+    document.getElementById('featured-tours').scrollIntoView({behavior:'smooth'});
+  });
+
+  // Form validation + success
+  const validate = el => {
+    const ok = el.checkValidity() && (!el.required || el.value.trim() !== '');
+    el.classList.toggle('invalid', !ok);
+    const err = el.parentElement.querySelector('.f-error');
+    if (err) err.classList.toggle('hidden', ok);
+    return ok;
+  };
+  const fields = [form.name, form.phone, form.email];
+  fields.forEach(el => el.addEventListener('blur', () => validate(el)));
+  const submitBtn = $('#submitBtn'), submitIcon = $('#submitIcon'), submitText = $('#submitText'), formError = $('#formError');
+  const setSending = on => {
+    submitBtn.disabled = on;
+    submitIcon.textContent = on ? 'progress_activity' : 'send';
+    submitIcon.classList.toggle('animate-spin', on);
+    submitText.textContent = on ? 'Đang gửi...' : 'Gửi Thông Tin Cho Minh';
+  };
+  const showSuccess = () => {
+    $('#successName').textContent = form.name.value.trim().split(' ').pop() || 'bạn';
+    form.classList.add('hidden');
+    $('#formSuccess').classList.remove('hidden');
+  };
+
+  form.addEventListener('submit', async e => {
+    e.preventDefault();
+    formError.classList.add('hidden');
+    const allOk = fields.map(validate).every(Boolean);
+    if (!allOk) { fields.find(f => f.classList.contains('invalid')).focus(); return; }
+
+    // Chưa dán link Apps Script → chạy chế độ demo
+    if (!FORM_ENDPOINT || FORM_ENDPOINT.includes('DAN_LINK')) {
+      console.warn('Chưa cấu hình FORM_ENDPOINT – form đang ở chế độ demo, dữ liệu không được gửi đi.');
+      showSuccess(); return;
+    }
+
+    const data = new URLSearchParams({
+      name: form.name.value.trim(),
+      phone: form.phone.value.trim(),
+      email: form.email.value.trim(),
+      interest: form.interest.options[form.interest.selectedIndex].text,
+      date: form.date.value.trim(),
+      size: form.size.value,
+      message: form.message.value.trim(),
+      website: form.website.value,
+      page: location.href.split('#')[0]
+    });
+
+    setSending(true);
+    try {
+      const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: data });
+      const json = await res.json().catch(() => ({}));
+      if (!res.ok || json.ok === false) throw new Error(json.error || res.status);
+      showSuccess();
+    } catch (err) {
+      console.error('Gửi form thất bại:', err);
+      formError.classList.remove('hidden');
+    } finally {
+      setSending(false);
+    }
+  });
+  $('#resetForm').addEventListener('click', () => {
+    form.reset(); fields.forEach(f => f.classList.remove('invalid'));
+    $$('.f-error', form).forEach(e => e.classList.add('hidden'));
+    formError.classList.add('hidden');
+    $('#formSuccess').classList.add('hidden'); form.classList.remove('hidden');
+  });
+
+  // Reveal on scroll
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const io = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'}) : null;
+  $$('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+
+  // Count-up numbers
+  const fmt = n => n.toLocaleString('vi-VN');
+  const countIO = 'IntersectionObserver' in window && !reduce ? new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (!en.isIntersecting) return;
+      const el = en.target, to = +el.dataset.to, t0 = performance.now(), dur = 1400;
+      const tick = t => { const p = Math.min((t - t0) / dur, 1); el.textContent = fmt(Math.round(to * (1 - Math.pow(1 - p, 3)))); if (p < 1) requestAnimationFrame(tick); };
+      requestAnimationFrame(tick); countIO.unobserve(el);
+    });
+  }, {threshold:.6}) : null;
+  $$('.countup').forEach(el => countIO ? countIO.observe(el) : el.textContent = fmt(+el.dataset.to));
+})();
+</script>
+</body>
+</html>
